@@ -23,7 +23,7 @@ app.config(['$routeProvider', function ($routeProvider) {
       controller: 'genEventsController',
       templateUrl: 'templates/generalEventsTemplate.html',
     })
-    .when('/myEvents', {
+    .when('/myevents', {
       controller: 'myEventsController',
       templateUrl: 'templates/myEventsTemplate.html',
     });
