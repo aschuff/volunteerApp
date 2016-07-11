@@ -11,22 +11,22 @@ gulp.task('default', ['html', 'css', 'js'])
 gulp.task('css', function (){
   gulp.src('./sass/styles.scss')
   .pipe(sass())
-  .pipe(gulp.dest('../public'))
+  .pipe(gulp.dest('./public'))
 });
 
 // HTML
 gulp.task('html', function () {
-    gulp.src('./templates/*.html').pipe(gulp.dest('../public/templates'));
+    gulp.src('./templates/*.html').pipe(gulp.dest('./public/templates'));
 
     return gulp.src('./index.html')
-        .pipe(gulp.dest('../public'));
+        .pipe(gulp.dest('./public'));
 });
 
 //JS
 gulp.task('js', function(){
   gulp.src('./js/*.js')
     .pipe(browserify())
-    .pipe(gulp.dest('../public'))
+    .pipe(gulp.dest('./public'))
 });
 
 // WATCH CHANGES
