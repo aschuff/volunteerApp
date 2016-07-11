@@ -4,7 +4,6 @@ var watch = require('gulp-watch'); //npm install gulp-watch
 var browserify = require('gulp-browserify') // npm install gulp-browserify
 
 // SPECIFYING DEPENDENCIES
-// gulp.task('default',['html', 'css', 'js'])
 gulp.task('default', ['html', 'css', 'js'])
 
 // SASS TO CSS

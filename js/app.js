@@ -3,12 +3,11 @@ let app = angular.module('volunteerApp', ['ngRoute']);
 // Controllers
 require('./controllers/genEventsController')(app);
 require('./controllers/userController')(app);
-require('./controllers/selectedEventsController')(app);
+require('./controllers/myEventsController')(app);
 
 // Services
 require('./services/eventService')(app);
 require('./services/userService')(app);
-
 
 //router
 app.config(['$routeProvider', function ($routeProvider) {
@@ -24,9 +23,9 @@ app.config(['$routeProvider', function ($routeProvider) {
       controller: 'genEventsController',
       templateUrl: 'templates/generalEventsTemplate.html',
     })
-    .when('/selectedevents', {
-      controller: 'selectedEventsController',
-      templateUrl: 'templates/selectedEventsTemplate.html',
+    .when('/myEvents', {
+      controller: 'myEventsController',
+      templateUrl: 'templates/myEventsTemplate.html',
     });
 
 }]);
