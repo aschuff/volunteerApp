@@ -1,59 +1,43 @@
-[
-  {
+[{
     "username": "amanda",
-    "password": "a",
-  },
-  {
+    "password": "a"
+}, {
     "username": "todd",
-    "password": "t",
-  },
-  {
+    "password": "t"
+}, {
     "username": "sara",
-    "password": "s",
-  },
-  {
+    "password": "s"
+}, {
     "username": "neal",
-    "password": "n",
-  },
-  {
+    "password": "n"
+}, {
     "username": "jacob",
-    "password": "j",
-  },
-  {
+    "password": "j"
+}, {
     "username": "tracy",
-    "password": "tr",
-  },
-  {
+    "password": "t"
+}, {
     "username": "felicia",
-    "password": "f",
-  },
-  {
+    "password": "f"
+}, {
     "username": "amandaL",
-    "password": "l",
-  },
-  {
+    "password": "l"
+}, {
     "username": "david",
-    "password": "l",
-  },
-  {
+    "password": "l"
+}, {
     "username": "melissa",
-    "password": "m",
-  },
-  {
+    "password": "m"
+}, {
     "username": "kylie",
-    "password": "k",
-  },
-  {
+    "password": "k"
+}, {
     "username": "becky",
-    "password": "b",
-  },
-  {
+    "password": "b"
+}, {
     "username": "kinley",
-    "password": "k",
-  },
-  {
+    "password": "k"
+}, {
     "username": "raelynn",
-    "password": "r",
-  },
-
-]
+    "password": "r"
+}]

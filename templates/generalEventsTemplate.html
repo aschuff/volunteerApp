@@ -9,27 +9,21 @@
     <section class="top-bar-section">
         <!-- Right Nav Section -->
         <ul class="center-buttons">
+            <!-- <li class="divider"></li>
+            <li><a href="#events">Events</a></li> -->
             <li class="divider"></li>
-            <li><a href="#">Events</a></li>
+            <li><a href="#users">Volunteers</a></li>
             <li class="divider"></li>
-            <!-- <li><a href="#">Centered Button</a></li> -->
-            <!-- <li class="divider"></li> -->
-            <li><a href="#">Logout</a></li>
+            <li><a href="#login">Logout</a></li>
             <li class="divider"></li>
         </ul>
     </section>
 </nav>
 
-<ul ng-repeat='name in eventList'>
-    <li>{{ name.name }}</li>
-    <li>{{ name.date }}</li>
-    <li>{{ name.host.name }}</li>
-</ul>
-
 <div class="row">
     <div class="large-12 columns">
         <div class="panel">
-            <h1>Events Nearby</h1>
+            <h1>All Events</h1>
         </div>
     </div>
 </div>
@@ -67,38 +61,32 @@
 
     <div class="large-6 columns">
 
-        <div ng-repeat='name in eventList' class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
+        <div ng-repeat='name in eventList | limitTo: 10' class="row">
+          <eventthing info="name"></eventthing>
+            <!-- <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
             <div class="large-10 columns">
-                <p><strong>Event: {{name.name}}</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+                <h4><strong>{{name.name}}</strong></h4>
+                <p>Description: {{ name.description }}</p>
                 <ul class="inline-list">
-                    <li>{{ name.name }}</li>
-                    <li>{{ name.date }}</li>
-                    <li>{{ name.host.name }}</li>
+                    <li>Host: {{ name.host.name }}</li>
+                    <li>Date: {{ name.date }}</li>
                 </ul>
-                <h6>2 Comments</h6>
-                <div class="row">
-                    <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" /></div>
-                    <div class="large-10 columns">
-                        <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" /></div>
-                    <div class="large-10 columns">
-                        <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p>
-                    </div>
-                </div>
-            </div>
+                <h6>Comments</h6>
+                <ul>
+                  <li>loved it</li>
+                  <li>super fun</li>
+                  <li>can't wait to do it again</li>
+                </ul>
+            </div> -->
         </div>
-
         <hr/>
+
     </div>
 
 
     <aside class="large-3 columns hide-for-small">
-        <p><img src="http://placehold.it/300x440&text=[ad]" /></p>
-        <p><img src="http://placehold.it/300x440&text=[ad]" /></p>
+        <p><img src="http://placehold.it/300x440&text=[your ad]" /></p>
+        <p><img src="http://placehold.it/300x440&text=[your ad]" /></p>
     </aside>
 </div>
 
@@ -110,14 +98,18 @@
                 <p>&copy; Copyright no one at all. Go to town.</p>
             </div>
             <div class="large-7 columns">
-                <ul class="inline-list right">
-                    <li><a href="#">Section 1</a></li>
-                    <li><a href="#">Section 2</a></li>
-                    <li><a href="#">Section 3</a></li>
-                    <li><a href="#">Section 4</a></li>
-                    <li><a href="#">Section 5</a></li>
-                    <li><a href="#">Section 6</a></li>
-                </ul>
+              <div class="large-7 columns">
+                  <ul class="pagination">
+                    <li class="arrow unavailable"><a href="">&laquo;</a></li>
+                      <li class='current'><a href=" ">1</a></li>
+                      <li><a href="#">2</a></li>
+                      <li><a href="#">3</a></li>
+                      <li class="unavailable"><a href="">&hellip;</a></li>
+                      <!-- <li><a href="#">4</a></li> -->
+                      <li><a href="#">5</a></li>
+                      <li class="arrow"><a href="">&raquo;</a></li>
+                  </ul>
+              </div>
             </div>
         </div>
     </div>

@@ -7,7 +7,7 @@ module.exports = function(app) {
             method: 'GET',
             url: 'http://localhost:3000/api/events.json'
         }).then(function(response) {
-            console.table('events:', response);
+            console.log('events:', response);
             let eventList = response.data
             angular.copy(eventList, eventArray)
         })
@@ -15,6 +15,6 @@ module.exports = function(app) {
             getEvents: function() {
                 return eventArray;
             }
-        };
+        }; 
     }]);
 };

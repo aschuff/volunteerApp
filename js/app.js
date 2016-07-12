@@ -1,7 +1,7 @@
 let app = angular.module('volunteerApp', ['ngRoute']);
 
 // Controllers
-require('./controllers/GenEventsController')(app);
+require('./controllers/AllEventsController')(app);
 require('./controllers/UserController')(app);
 require('./controllers/MyEventsController')(app);
 
@@ -10,8 +10,8 @@ require('./services/EventService')(app);
 require('./services/UserService')(app);
 
 // Directives
-require('./directives/users')
-require('./directives/events')
+require('./directives/users')(app);
+require('./directives/events')(app);
 
 
 // Router
@@ -25,8 +25,12 @@ app.config(['$routeProvider', function ($routeProvider) {
       templateUrl: 'templates/loginTemplate.html',
     })
     .when('/events', {
-      controller: 'GenEventsController',
+      controller: 'AllEventsController',
       templateUrl: 'templates/generalEventsTemplate.html',
+    })
+    .when('/users', {
+      controller: 'UserController',
+      templateUrl: 'templates/usersTemplate.html',
     })
     .when('/myevents', {
       controller: 'MyEventsController',

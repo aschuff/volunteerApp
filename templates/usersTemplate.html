@@ -1,0 +1,110 @@
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+  <div class="logo">
+    <a href="http://zurb.com/stickers/images/intro-foundation.png"><img src="http://zurb.com/stickers/images/intro-foundation.png" /></a>
+  </div>
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="center-buttons">
+      <li class="divider"></li>
+      <li><a href="#myevents">My Events</a></li>
+      <li class="divider"></li>
+      <li><a href="#events">Events Nearby</a></li>
+      <li class="divider"></li>
+      <li><a href="#login">logout</a></li>
+      <li class="divider"></li>
+    </ul>
+  </section>
+</nav>
+
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="panel">
+                <h1>Volunteers</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+
+        <div class="large-3 columns ">
+            <div class="panel">
+                <a href="#"><img src="http://placehold.it/300x240&text=[img]" /></a>
+                <h5><a href="#">Your Name</a></h5>
+                <div class="section-container vertical-nav" data-section data-options="deep_linking: false; one_up: true">
+                    <section class="section">
+                        <h5 class="title"><a href="#">Section 1</a></h5>
+                    </section>
+                    <section class="section">
+                        <h5 class="title"><a href="#">Section 2</a></h5>
+                    </section>
+                    <section class="section">
+                        <h5 class="title"><a href="#">Section 3</a></h5>
+                    </section>
+                    <section class="section">
+                        <h5 class="title"><a href="#">Section 4</a></h5>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="large-6 columns">
+
+            <div class="row">
+              <div ng-repeat='user in currentUser | limitTo: 10' class="row">
+                <userperson info='user'></userperson>
+                  <!-- <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
+                  <div class="large-10 columns">
+                      <h4><strong>{{user.username}}</strong></h4>
+                      <!-- <p>Description: {{ name.description }}</p> -->
+                      <!-- <ul class="inline-list">
+                          <li>Host: {{ name.host.name }}</li>
+                          <li>Date: {{ name.date }}</li>
+                      </ul> -->
+                      <!-- <h6>Comments</h6>
+                      <ul>
+                        <li>loved it</li>
+                        <li>super fun</li>
+                        <li>can't wait to do it again</li>
+                      </ul>
+                  </div> -->
+              </div>
+              <hr/>
+
+        </div>
+      </div>
+
+
+        <aside class="large-3 columns hide-for-small">
+            <p><img src="http://placehold.it/300x440&text=[ad]" /></p>
+            <p><img src="http://placehold.it/300x440&text=[ad]" /></p>
+        </aside>
+    </div>
+
+    <footer class="row">
+        <div class="large-12 columns">
+            <hr/>
+            <div class="row">
+                <div class="large-5 columns">
+                    <p>&copy; Copyright no one at all. Go to town.</p>
+                </div>
+                <div class="large-7 columns">
+                    <ul class="pagination">
+                      <li class="arrow unavailable"><a href="">&laquo;</a></li>
+                        <li class='current'><a href=" ">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li class="unavailable"><a href="">&hellip;</a></li>
+                        <!-- <li><a href="#">4</a></li> -->
+                        <li><a href="#">5</a></li>
+                        <li class="arrow"><a href="">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>

@@ -1,5 +1,7 @@
 module.exports = function(app) {
-    app.controller('MyEventsController', ['$scope', '$location', 'UserService', 'EventService', function($scope, $location, UserService, EventService) {
+    app.controller('MyEventsController', ['$scope', '$location', 'EventService', function($scope, $location, EventService) {
+      $scope.eventList = EventService.getEvents();
+      console.log($scope.eventList);
 
       // $scope.login = function(){
       //   console.log('my events');
