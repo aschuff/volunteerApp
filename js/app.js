@@ -1,30 +1,35 @@
 let app = angular.module('volunteerApp', ['ngRoute']);
 
 // Controllers
-require('./controllers/genEventsController')(app);
-require('./controllers/userController')(app);
-require('./controllers/myEventsController')(app);
+require('./controllers/GenEventsController')(app);
+require('./controllers/UserController')(app);
+require('./controllers/MyEventsController')(app);
 
 // Services
-require('./services/eventService')(app);
-require('./services/userService')(app);
+require('./services/EventService')(app);
+require('./services/UserService')(app);
 
-//router
+// Directives
+require('./directives/users')
+require('./directives/events')
+
+
+// Router
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
     .when('/', {
       redirectTo: '/login',
     })
     .when('/login', {
-      controller: 'userController',
+      controller: 'UserController',
       templateUrl: 'templates/loginTemplate.html',
     })
     .when('/events', {
-      controller: 'genEventsController',
+      controller: 'GenEventsController',
       templateUrl: 'templates/generalEventsTemplate.html',
     })
     .when('/myevents', {
-      controller: 'myEventsController',
+      controller: 'MyEventsController',
       templateUrl: 'templates/myEventsTemplate.html',
     });
 

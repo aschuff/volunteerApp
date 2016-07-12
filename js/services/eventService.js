@@ -1,10 +1,20 @@
-module.exports = function(app){
+module.exports = function(app) {
 
+    app.factory('EventService', ['$http'function($http) {
+        let eventArray = [];
 
-  app.factory('eventService',['$http', function($http){
-
-    return {
-
-    };
-  }]);
+        http({
+            method: 'GET',
+            url: 'http://localhost:3000/api/events.json'
+        }).then(function(response) {
+            console.table('events:', response);
+            let eventList = response.data
+            angular.copy(eventList, eventArray)
+        })
+        return {
+            getEvents: function() {
+                return eventArray;
+            }
+        };
+    }]);
 };

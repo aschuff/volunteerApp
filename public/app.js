@@ -1,6 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 module.exports = function(app) {
-    app.controller('genEventsController', ['$scope', '$location', 'eventService', function($scope, $location, eventService) {
+    app.controller('GenEventsController', ['$scope', '$location', 'EventService', function($scope, $location, EventService) {
 
       // $scope.login = function(){
       //   console.log('all events');
@@ -12,7 +12,7 @@ module.exports = function(app) {
 
 },{}],2:[function(require,module,exports){
 module.exports = function(app) {
-    app.controller('myEventsController', ['$scope', '$location', 'userService', 'eventService', function($scope, $location, userService, eventService) {
+    app.controller('MyEventsController', ['$scope', '$location', 'UserService', 'EventService', function($scope, $location, UserService, EventService) {
 
       // $scope.login = function(){
       //   console.log('my events');
@@ -24,7 +24,7 @@ module.exports = function(app) {
 
 },{}],3:[function(require,module,exports){
 module.exports = function(app) {
-    app.controller('userController', ['$scope', '$location', 'userService', function($scope, $location, userService) {
+    app.controller('UserController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
 
       // $scope.login = function(){
       //   console.log('logged in');
@@ -38,13 +38,13 @@ module.exports = function(app) {
 let app = angular.module('volunteerApp', ['ngRoute']);
 
 // Controllers
-require('./controllers/genEventsController')(app);
-require('./controllers/userController')(app);
-require('./controllers/myEventsController')(app);
+require('./controllers/GenEventsController')(app);
+require('./controllers/UserController')(app);
+require('./controllers/MyEventsController')(app);
 
 // Services
-require('./services/eventService')(app);
-require('./services/userService')(app);
+require('./services/EventService')(app);
+require('./services/UserService')(app);
 
 //router
 app.config(['$routeProvider', function ($routeProvider) {
@@ -53,25 +53,25 @@ app.config(['$routeProvider', function ($routeProvider) {
       redirectTo: '/login',
     })
     .when('/login', {
-      controller: 'userController',
+      controller: 'UserController',
       templateUrl: 'templates/loginTemplate.html',
     })
     .when('/events', {
-      controller: 'genEventsController',
+      controller: 'GenEventsController',
       templateUrl: 'templates/generalEventsTemplate.html',
     })
     .when('/myevents', {
-      controller: 'myEventsController',
+      controller: 'MyEventsController',
       templateUrl: 'templates/myEventsTemplate.html',
     });
 
 }]);
 
-},{"./controllers/genEventsController":1,"./controllers/myEventsController":2,"./controllers/userController":3,"./services/eventService":5,"./services/userService":6}],5:[function(require,module,exports){
+},{"./controllers/GenEventsController":1,"./controllers/MyEventsController":2,"./controllers/UserController":3,"./services/EventService":5,"./services/UserService":6}],5:[function(require,module,exports){
 module.exports = function(app){
 
 
-  app.factory('eventService',['$http', function($http){
+  app.factory('EventService',['$http', function($http){
 
     return {
 
@@ -83,7 +83,7 @@ module.exports = function(app){
 module.exports = function(app){
 
 // this service will handle all user data
-  app.factory('userService', ['$http','$location', function($http, $location){
+  app.factory('UserService', ['$http','$location', function($http, $location){
     let currentUser = {};
 
     return{
