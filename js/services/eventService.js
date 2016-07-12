@@ -1,9 +1,9 @@
 module.exports = function(app) {
 
-    app.factory('EventService', ['$http'function($http) {
+    app.factory('EventService', ['$http', function($http) {
         let eventArray = [];
 
-        http({
+        $http({
             method: 'GET',
             url: 'http://localhost:3000/api/events.json'
         }).then(function(response) {

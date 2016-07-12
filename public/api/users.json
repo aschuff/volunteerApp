@@ -4,7 +4,56 @@
     "password": "a",
   },
   {
-  "username": "todd",
-  "password": "t",
+    "username": "todd",
+    "password": "t",
   },
-];
+  {
+    "username": "sara",
+    "password": "s",
+  },
+  {
+    "username": "neal",
+    "password": "n",
+  },
+  {
+    "username": "jacob",
+    "password": "j",
+  },
+  {
+    "username": "tracy",
+    "password": "tr",
+  },
+  {
+    "username": "felicia",
+    "password": "f",
+  },
+  {
+    "username": "amandaL",
+    "password": "l",
+  },
+  {
+    "username": "david",
+    "password": "l",
+  },
+  {
+    "username": "melissa",
+    "password": "m",
+  },
+  {
+    "username": "kylie",
+    "password": "k",
+  },
+  {
+    "username": "becky",
+    "password": "b",
+  },
+  {
+    "username": "kinley",
+    "password": "k",
+  },
+  {
+    "username": "raelynn",
+    "password": "r",
+  },
+
+]

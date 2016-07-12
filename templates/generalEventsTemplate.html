@@ -1,24 +1,30 @@
 <nav class="top-bar" data-topbar>
-  <ul class="title-area">
-    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-  <div class="logo">
-    <a href="http://zurb.com/stickers/images/intro-foundation.png"><img src="http://zurb.com/stickers/images/intro-foundation.png" /></a>
-  </div>
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="center-buttons">
-      <li class="divider"></li>
-      <li><a href="#">Events</a></li>
-      <li class="divider"></li>
-      <!-- <li><a href="#">Centered Button</a></li> -->
-      <!-- <li class="divider"></li> -->
-      <li><a href="#">Logout</a></li>
-      <li class="divider"></li>
+    <ul class="title-area">
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
-  </section>
+    <div class="logo">
+        <a href="http://zurb.com/stickers/images/intro-foundation.png"><img src="http://zurb.com/stickers/images/intro-foundation.png" /></a>
+    </div>
+    <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="center-buttons">
+            <li class="divider"></li>
+            <li><a href="#">Events</a></li>
+            <li class="divider"></li>
+            <!-- <li><a href="#">Centered Button</a></li> -->
+            <!-- <li class="divider"></li> -->
+            <li><a href="#">Logout</a></li>
+            <li class="divider"></li>
+        </ul>
+    </section>
 </nav>
+
+<ul ng-repeat='name in eventList'>
+    <li>{{ name.name }}</li>
+    <li>{{ name.date }}</li>
+    <li>{{ name.host.name }}</li>
+</ul>
 
 <div class="row">
     <div class="large-12 columns">
@@ -64,10 +70,11 @@
         <div ng-repeat='name in eventList' class="row">
             <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
             <div class="large-10 columns">
-                <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
+                <p><strong>Event: {{name.name}}</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
                 <ul class="inline-list">
-                    <li><a href="">Reply</a></li>
-                    <li><a href="">Share</a></li>
+                    <li>{{ name.name }}</li>
+                    <li>{{ name.date }}</li>
+                    <li>{{ name.host.name }}</li>
                 </ul>
                 <h6>2 Comments</h6>
                 <div class="row">
@@ -86,38 +93,6 @@
         </div>
 
         <hr/>
-
-        <div class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
-            <div class="large-10 columns">
-                <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-                <ul class="inline-list">
-                    <li><a href="">Reply</a></li>
-                    <li><a href="">Share</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <hr/>
-
-        <div class="row">
-            <div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]" /></div>
-            <div class="large-10 columns">
-                <p><strong>Some Person said:</strong> Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong.</p>
-                <ul class="inline-list">
-                    <li><a href="">Reply</a></li>
-                    <li><a href="">Share</a></li>
-                </ul>
-                <h6>2 Comments</h6>
-                <div class="row">
-                    <div class="large-2 columns small-3"><img src="http://placehold.it/50x50&text=[img]" /></div>
-                    <div class="large-10 columns">
-                        <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 
 
