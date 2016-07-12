@@ -2,6 +2,11 @@
 module.exports = function(app) {
     app.controller('AllEventsController', ['$scope', '$location', 'EventService', function($scope, $location, EventService) {
       $scope.eventList = EventService.getEvents();
+
+      $scope.signUp = function(){
+        console.log('signed up');
+        
+      }
     }]);
 };
 
@@ -23,11 +28,16 @@ module.exports = function(app) {
 module.exports = function(app) {
     app.controller('UserController', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
       $scope.currentUser = UserService.getUsers();
-      // $scope.login = function(){
-      //   console.log('logged in');
-      //
-      // };
+      $scope.username = UserService.getUsername();
 
+      $scope.name = '';
+      $scope.password = '';
+      
+      $scope.login = function(){
+        console.log(`${$scope.name} is logged in `);
+        UserService.newUser($scope.name, $scope.password);
+        $location.path('/myevents');
+      }
     }]);
 };
 
@@ -40,6 +50,14 @@ app.directive('eventthing', function () {
         scope: {
             eventname: '=info',
         },
+        // replace: true,
+    };
+});
+
+app.directive('signupbutton', function () {
+    return {
+        restrict: 'E',
+        templateUrl: '<button ng-click="signUp()">Volunteer</button>',
         // replace: true,
     };
 });
@@ -129,6 +147,7 @@ module.exports = function(app){
 // this service will handle all user data
   app.factory('UserService', ['$http', function($http){
         let currentUser = [];
+        let username = '';
 
         $http({
             method: 'GET',
@@ -142,27 +161,25 @@ module.exports = function(app){
             getUsers: function() {
                 return currentUser;
             }
-        };
-
-        // serverLogin: function(username,password){
+        }
+        // newUser: function(username,password){
         //   $http({
         //         method: 'POST',
-        //         url: '/login',
+        //         url: 'http://localhost:3000/api/users.json',
         //         data: {
         //           username: username,
         //           password: password,
         //         }
         //     }).then(function(response) {
         //       console.log("here is whats coming back", response );
-        //
+        //       console.log(username);
         //     })
         // },
         //
-        // getCurrentUser: function() {
+        // getUsername: function() {
         //   console.log("user info", currentUser);
-        //   return currentUser
+        //   return username;
         // },
-
     }]);
 };
 

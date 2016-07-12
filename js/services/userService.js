@@ -17,24 +17,24 @@ module.exports = function(app){
             getUsers: function() {
                 return currentUser;
             }
-        },
-        newUser: function(username,password){
-          $http({
-                method: 'POST',
-                url: 'http://localhost:3000/api/users.json',
-                data: {
-                  username: username,
-                  password: password,
-                }
-            }).then(function(response) {
-              console.log("here is whats coming back", response );
-              console.log(username);
-            })
-        },
-
-        getUsername: function() {
-          console.log("user info", currentUser);
-          return username;
-        },
+        }
+        // newUser: function(username,password){
+        //   $http({
+        //         method: 'POST',
+        //         url: 'http://localhost:3000/api/users.json',
+        //         data: {
+        //           username: username,
+        //           password: password,
+        //         }
+        //     }).then(function(response) {
+        //       console.log("here is whats coming back", response );
+        //       console.log(username);
+        //     })
+        // },
+        //
+        // getUsername: function() {
+        //   console.log("user info", currentUser);
+        //   return username;
+        // },
     }]);
 };
