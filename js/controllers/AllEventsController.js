@@ -4,7 +4,22 @@ module.exports = function(app) {
 
       $scope.signUp = function(){
         console.log('signed up');
-        
-      }
+      };
     }]);
 };
+
+
+// PAGINATION DOESN'T WORK ON FOUNDATION THINGS
+// $scope.pageNumber = 1;
+// $scope.itemsPerPage = 10;
+//
+// $scope.eventList = EventService.getEvents($scope.pageNumber, $scope.itemsPerPage);
+//
+// $scope.prev = function () {
+//     $scope.pageNumber = $scope.pageNumber - 1;
+//     $scope.eventList = EventService.getEvents($scope.pageNumber, $scope.itemsPerPage);
+// };
+// $scope.next = function () {
+//     $scope.pageNumber = $scope.pageNumber + 1;
+//     $scope.eventList = EventService.getEvents($scope.pageNumber, $scope.itemsPerPage);
+// };

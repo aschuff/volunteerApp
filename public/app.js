@@ -5,10 +5,25 @@ module.exports = function(app) {
 
       $scope.signUp = function(){
         console.log('signed up');
-        
-      }
+      };
     }]);
 };
+
+
+// PAGINATION DOESN'T WORK ON FOUNDATION THINGS
+// $scope.pageNumber = 1;
+// $scope.itemsPerPage = 10;
+//
+// $scope.eventList = EventService.getEvents($scope.pageNumber, $scope.itemsPerPage);
+//
+// $scope.prev = function () {
+//     $scope.pageNumber = $scope.pageNumber - 1;
+//     $scope.eventList = EventService.getEvents($scope.pageNumber, $scope.itemsPerPage);
+// };
+// $scope.next = function () {
+//     $scope.pageNumber = $scope.pageNumber + 1;
+//     $scope.eventList = EventService.getEvents($scope.pageNumber, $scope.itemsPerPage);
+// };
 
 },{}],2:[function(require,module,exports){
 module.exports = function(app) {
@@ -127,7 +142,7 @@ module.exports = function(app) {
 
         $http({
             method: 'GET',
-            url: 'http://localhost:3000/api/events.json'
+            url: 'http://localhost:7000/api/events'
         }).then(function(response) {
             console.log('events:', response);
             let eventList = response.data
@@ -135,11 +150,17 @@ module.exports = function(app) {
         })
         return {
             getEvents: function() {
-                return eventArray;
+                return eventArray
             }
-        }; 
+        };
     }]);
 };
+
+// PAGINATION DOESN'T WORK
+// getEvents: function(pageNum, perPage) {
+//   let start = (pageNum - 1) * perPage;
+//     return eventArray.slice(start, start + perPage);
+// }
 
 },{}],8:[function(require,module,exports){
 module.exports = function(app){
@@ -151,7 +172,7 @@ module.exports = function(app){
 
         $http({
             method: 'GET',
-            url: 'http://localhost:3000/api/users.json'
+            url: 'http://localhost:7000/api/volunteers'
         }).then(function(response) {
             console.log('users:', response);
             let userList = response.data

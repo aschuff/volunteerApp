@@ -7,7 +7,7 @@ module.exports = function(app){
 
         $http({
             method: 'GET',
-            url: 'http://localhost:3000/api/users.json'
+            url: 'http://localhost:7000/api/volunteers'
         }).then(function(response) {
             console.log('users:', response);
             let userList = response.data

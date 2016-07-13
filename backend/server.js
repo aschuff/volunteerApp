@@ -82,7 +82,7 @@ server.route({
 
     handler: function (request, reply) {
         if (added) {
-            reply(boom.badRequest('Already added Huck'));
+            reply(boom.badRequest('Already a user'));
         } else {
             newPerson.add({
                 username: 'username',
@@ -104,6 +104,18 @@ server.route({
         eventsArray.signedup(parseInt(request.params.eventId));
         reply();
     },
+});
+
+server.route({
+  method: 'GET',
+  path: '/{param*}',
+  handler: {
+    directory: {
+      path: 'public/',
+      redirectToSlash: true,
+      index: true
+    }
+  }
 })
 
 /**
